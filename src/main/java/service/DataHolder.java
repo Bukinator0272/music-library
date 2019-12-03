@@ -28,7 +28,7 @@ public class DataHolder {
 //        genreDAO.add(genre);
     }
 
-    public List<Track> getAlbums() {
+    public List<Track> getTraks() {
         return tracks;
     }
 
@@ -36,7 +36,7 @@ public class DataHolder {
         return genres;
     }
 
-    public int getTraksCount() {
+    public int getTracksCount() {
         return tracks.size();
     }
 

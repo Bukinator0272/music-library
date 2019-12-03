@@ -17,15 +17,18 @@
                                 <TableColumn fx:id="idColumn" prefWidth="350.0" text="Id"/>
                                 <TableColumn fx:id="nameColumn" prefWidth="350.0" text="Name"/>
                             </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
                         </TableView>
-                        <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false" text="Add" fx:id="addGenreButton"
-                                onAction="#onaddGenreButtonClickMethod"/>
-                        <Button layoutX="78.0" layoutY="276.0" mnemonicParsing="false" text="Get" fx:id="getGenreButton"
-                                onAction="#ongetGenreButtonClickMethod"/>
-                        <Button layoutX="138.0" layoutY="276.0" mnemonicParsing="false" text="Update"
-                                fx:id="updateGenreButton" onAction="#onupdateGenreButtonClickMethod"/>
-                        <Button layoutX="220.0" layoutY="276.0" mnemonicParsing="false" text="Delete"
-                                fx:id="deleteGenreButton" onAction="#ondeleteGenreButtonClickMethod"/>
+                        <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onAddGenreButtonClickMethod" text="Add"/>
+                        <Button layoutX="78.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onGetGenreButtonClickMethod" text="Get"/>
+                        <Button layoutX="138.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onUpdateGenreButtonClickMethod" text="Update"/>
+                        <Button layoutX="220.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onDeleteGenreButtonClickMethod" text="Delete"/>
                     </children>
                 </AnchorPane>
                 <Label layoutX="243.0" layoutY="7.0" text="Genre table" textFill="WHITE">

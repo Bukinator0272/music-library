@@ -21,15 +21,18 @@
                                 <TableColumn fx:id="genreColumn" prefWidth="100.0" text="Genre"/>
                                 <TableColumn fx:id="durationColumn" prefWidth="100.0" text="Duration"/>
                             </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
                         </TableView>
-                        <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false" text="Add" fx:id="addTrackButton"
-                                onAction="#onaddTrackButtonClickMethod"/>
-                        <Button layoutX="78.0" layoutY="276.0" mnemonicParsing="false" text="Get" fx:id="getTrackButton"
-                                onAction="#ongetTrackButtonClickMethod"/>
-                        <Button layoutX="138.0" layoutY="276.0" mnemonicParsing="false" text="Update"
-                                fx:id="updateTrackButton" onAction="#onupdateTrackButtonClickMethod"/>
-                        <Button layoutX="220.0" layoutY="276.0" mnemonicParsing="false" text="Delete"
-                                fx:id="deleteTrackButton" onAction="#ondeleteTrackButtonClickMethod"/>
+                        <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onAddTrackButtonClickMethod" text="Add"/>
+                        <Button layoutX="78.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onGetTrackButtonClickMethod" text="Get"/>
+                        <Button layoutX="138.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onUpdateTrackButtonClickMethod" text="Update"/>
+                        <Button layoutX="220.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onDeleteTrackButtonClickMethod" text="Delete"/>
                     </children>
                 </AnchorPane>
                 <Label layoutX="243.0" layoutY="7.0" text="Traks table" textFill="WHITE">
