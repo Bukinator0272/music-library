@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainSceneController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+                </AnchorPane>
+                <Label layoutX="218.0" layoutY="14.0" text="Music Library" textFill="WHITE">
+                    <font>
+                        <Font size="45.0"/>
+                    </font>
+                </Label>
+                <MenuButton layoutX="14.0" layoutY="15.0" mnemonicParsing="false" text="Menu">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="View tracks"/>
+                        <MenuItem mnemonicParsing="false" text="View genres"/>
+                    </items>
+                </MenuButton>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

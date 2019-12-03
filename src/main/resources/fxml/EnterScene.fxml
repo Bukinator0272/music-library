@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EnterSceneController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+                    <children>
+                        <Button fx:id="addSmthButton" layoutX="14.0" layoutY="276.0" mnemonicParsing="false" onAction="#onaddSmthButtonClickMethod" text="Add" />
+                        <Button fx:id="getSmthButton" layoutX="78.0" layoutY="276.0" mnemonicParsing="false" onAction="#ongetSmthButtonClickMethod" text="Get" />
+                        <Button fx:id="updateSmthButton" layoutX="138.0" layoutY="276.0" mnemonicParsing="false" onAction="#onupdateSmthButtonClickMethod" text="Update" />
+                        <Button fx:id="deleteSmthButton" layoutX="220.0" layoutY="276.0" mnemonicParsing="false" onAction="#ondeleteSmthButtonClickMethod" text="Delete" />
+                        <TextField fx:id="nameTextField" layoutX="21.0" layoutY="46.0" promptText="Name" />
+                        <TextField fx:id="authorTextField" layoutX="21.0" layoutY="86.0" promptText="Author" />
+                        <TextField fx:id="albumTextField" layoutX="21.0" layoutY="126.0" promptText="Album" />
+                        <TextField fx:id="genreTextField" layoutX="21.0" layoutY="165.0" promptText="Genre" />
+                        <TextField fx:id="durationTextField" layoutX="21.0" layoutY="207.0" promptText="Duration" />
+                        <Text layoutX="312.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) Enter only &quot;Name&quot; to create &quot;Genre&quot;" />
+                        <Text layoutX="312.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2) Enter all filds to create &quot;Track&quot;" />
+                        <Text layoutX="312.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3) Don't do TRASH PLZ" />
+                    </children>
+                </AnchorPane>
+                <Label layoutX="243.0" layoutY="14.0" text="Enter smth" textFill="WHITE">
+                    <font>
+                        <Font size="45.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
