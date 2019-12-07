@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainSceneController {
+public class MainSceneView {
 
     @FXML
     void initialize() {

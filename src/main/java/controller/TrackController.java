@@ -15,11 +15,11 @@ public class TrackController {
     }
 
     void addTrack(String name, String author, String album, String genre, long duration) {
-        dataHolder.getTraks().add(new TrackImpl(UUID.randomUUID(), name, author, album, genre, duration));
+        dataHolder.getTracks().add(new TrackImpl(UUID.randomUUID(), name, author, album, genre, duration));
     }
 
     public Track[] getTracks() {
-        List<Track> tracks = dataHolder.getTraks();
+        List<Track> tracks = dataHolder.getTracks();
         Track[] tracksArray = new Track[getTracksCount()];
         for (int i = 0; i < getTracksCount(); i++) {
             tracksArray[i] = tracks.get(i);
@@ -28,7 +28,7 @@ public class TrackController {
     }
 
     void deleteTrack(String name) {
-        List<Track> albums = dataHolder.getTraks();
+        List<Track> albums = dataHolder.getTracks();
         for (int i = 0; i < getTracksCount(); i++) {
             if (albums.get(i).getName() == name) {
                 albums.remove(i);
@@ -36,8 +36,5 @@ public class TrackController {
             }
         }
     }
-
-    //dunno how to do update and "get by smth" operations
-    //still dunno where is our search-thing :D
 
 }
