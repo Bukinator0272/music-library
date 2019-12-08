@@ -1,14 +1,11 @@
 package model.interfaces;
 
-import java.util.UUID;
-
 public interface Genre {
+    Long getId();
 
-    UUID getId();
-    void setId(UUID id);
+    void setId(Long id);
 
     String getName();
+
     void setName(String name);
-
-
 }

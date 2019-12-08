@@ -1,22 +1,18 @@
 package model.impl;
 
+import model.interfaces.Genre;
 import model.interfaces.Track;
-
-import java.util.UUID;
 
 public class TrackImpl implements Track {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String author;
     private String album;
-    private String genre;
-    private long duration;
+    private Genre genre;
+    private int duration;
 
-    public TrackImpl() {
-    }
-
-    public TrackImpl(UUID id, String name, String author, String album, String genre, long duration) {
+    public TrackImpl(Long id, String name, String author, String album, Genre genre, int duration) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -25,13 +21,20 @@ public class TrackImpl implements Track {
         this.duration = duration;
     }
 
-    @Override
-    public UUID getId() {
-        return id;
+    public TrackImpl(String name, String author, String album, Genre genre, int duration) {
+        this.name = name;
+        this.author = author;
+        this.album = album;
+        this.genre = genre;
+        this.duration = duration;
     }
 
     @Override
-    public void setId(UUID id) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -66,22 +69,22 @@ public class TrackImpl implements Track {
     }
 
     @Override
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
     @Override
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
     @Override
-    public long getDuration() {
+    public int getDuration() {
         return duration;
     }
 
     @Override
-    public void setDuration(long duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }

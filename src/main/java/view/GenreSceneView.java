@@ -79,11 +79,11 @@ public class GenreSceneView {
 
     private ObservableList<Genre> initData() {
         ObservableList<Genre> genres = FXCollections.observableArrayList();
-        genres.add(new GenreImpl(UUID.randomUUID(), "pog1"));
-        genres.add(new GenreImpl(UUID.randomUUID(), "pog2"));
-        genres.add(new GenreImpl(UUID.randomUUID(), "pog3"));
-        genres.add(new GenreImpl(UUID.randomUUID(), "pog4"));
-        genres.add(new GenreImpl(UUID.randomUUID(), "pog5"));
+//        genres.add(new GenreImpl(UUID.randomUUID(), "pog1"));
+//        genres.add(new GenreImpl(UUID.randomUUID(), "pog2"));
+//        genres.add(new GenreImpl(UUID.randomUUID(), "pog3"));
+//        genres.add(new GenreImpl(UUID.randomUUID(), "pog4"));
+//        genres.add(new GenreImpl(UUID.randomUUID(), "pog5"));
         return genres;
     }
 

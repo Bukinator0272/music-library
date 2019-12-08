@@ -1,13 +1,18 @@
 package service;
 
+import model.dbservice.connection.DataBaseService;
+import model.dbservice.dao.GenreDAO;
+import model.impl.GenreImpl;
+import model.impl.TrackImpl;
 import model.interfaces.Genre;
 import model.interfaces.Track;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataHolder {
-
+    private DataBaseService db = DataBaseService.getInstance();
     private List<Track> tracks;
     private List<Genre> genres;
 
@@ -16,24 +21,45 @@ public class DataHolder {
         genres = new ArrayList<>();
     }
 
-    void addTrack(Track track) {
+    private Genre getGenreByName(String name) {
+        for (Genre genre : genres) {
+            if (genre.getName().equals(name)) return genre;
+        }
+        return null;
+    }
+
+    public void addGenre(String name) throws SQLException {
+        Genre genre = new GenreImpl(name);
+        genres.add(genre);
+        GenreDAO genreDAO = new GenreDAO(db.getConnection());
+        genreDAO.insert(genre);
+    }
+
+    public void removeGenre(String name) throws SQLException {
+        Genre genre = getGenreByName(name);
+        if (genre!=null){
+            genres.remove(genre);
+            GenreDAO genreDAO = new GenreDAO(db.getConnection());
+            genreDAO.delete(genre.getId());
+        }
+    }
+
+    public void updateGenre(String name, String newName) throws SQLException {
+        if (name != null && newName!=null){
+            Genre genre = getGenreByName(name);
+            if (genre!=null){
+                genre.setName(newName);
+                GenreDAO genreDAO = new GenreDAO(db.getConnection());
+                genreDAO.update(genre);
+            }
+        }
+    }
+    
+    public void addTrack(String name, String author, String album, String genre, int duration) {
+        Track track = new TrackImpl(name, author, album, getGenreByName(genre), duration);
         tracks.add(track);
 //        GenreDAO genreDAO = new GenreDAO();
 //        genreDAO.add(track);
-    }
-
-    void addGenre(Genre genre) {
-        genres.add(genre);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(genre);
-    }
-
-    public List<Track> getTraks() {
-        return tracks;
-    }
-
-    public List<Genre> getGenres() {
-        return genres;
     }
 
     public int getTracksCount() {
@@ -43,51 +69,4 @@ public class DataHolder {
     public int getGenresCount() {
         return genres.size();
     }
-
-    //wrong argument
-    public Track getTrack(Track track) {
-        tracks.add(track);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(track);
-        return track;
-    }
-
-    //wrong argument
-    public Genre getGenre(Genre genre) {
-        genres.add(genre);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(genre);
-        return genre;
-    }
-
-    //wrong argument
-    //wrong statement
-    void updateTrack(Track track) {
-        tracks.add(track);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(track);
-    }
-
-    //wrong argument
-    //wrong statement
-    void updateGenre(Genre genre) {
-        genres.add(genre);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(genre);
-    }
-
-    //wrong argument
-    void deleteTrack(Track track) {
-        tracks.remove(track);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(track);
-    }
-
-    //wrong argument
-    void deleteGenre(Genre genre) {
-        genres.remove(genre);
-//        GenreDAO genreDAO = new GenreDAO();
-//        genreDAO.add(genre);
-    }
-
 }

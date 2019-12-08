@@ -91,11 +91,11 @@ public class TrackSceneView {
 
     private ObservableList<Track> initData() {
         ObservableList<Track> tracks = FXCollections.observableArrayList();
-        tracks.add(new TrackImpl(UUID.randomUUID(), "pog1", "anime1", "rofl1", "kek1", 5));
-        tracks.add(new TrackImpl(UUID.randomUUID(), "pog2", "anime2", "rofl2", "kek2", 10));
-        tracks.add(new TrackImpl(UUID.randomUUID(), "pog3", "anime3", "rofl3", "kek3", 15));
-        tracks.add(new TrackImpl(UUID.randomUUID(), "pog4", "anime4", "rofl4", "kek4", 20));
-        tracks.add(new TrackImpl(UUID.randomUUID(), "pog5", "anime5", "rofl5", "kek5", 25));
+//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog1", "anime1", "rofl1", "kek1", 5));
+//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog2", "anime2", "rofl2", "kek2", 10));
+//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog3", "anime3", "rofl3", "kek3", 15));
+//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog4", "anime4", "rofl4", "kek4", 20));
+//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog5", "anime5", "rofl5", "kek5", 25));
         return tracks;
     }
 

@@ -1,26 +1,27 @@
 package model.interfaces;
 
-import java.util.UUID;
-
 public interface Track {
+    Long getId();
 
-    UUID getId();
-    void setId(UUID id);
+    void setId(Long id);
 
     String getName();
+
     void setName(String name);
 
     String getAuthor();
+
     void setAuthor(String author);
 
     String getAlbum();
+
     void setAlbum(String album);
 
-    String getGenre();
-    void setGenre(String genre);
+    int getDuration();
 
-    long getDuration();
-    void setDuration(long duration);
+    void setDuration(int duration);
 
+    Genre getGenre();
 
+    void setGenre(Genre genre);
 }

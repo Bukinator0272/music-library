@@ -2,28 +2,26 @@ package model.impl;
 
 import model.interfaces.Genre;
 
-import java.util.UUID;
-
 public class GenreImpl implements Genre {
 
-    private UUID id;
+    private Long id;
     private String name;
 
-    public GenreImpl() {
-    }
-
-    public GenreImpl(UUID id, String name) {
+    public GenreImpl(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    @Override
-    public UUID getId() {
-        return id;
+    public GenreImpl(String name) {
+        this.name = name;
     }
 
     @Override
-    public void setId(UUID id) {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
