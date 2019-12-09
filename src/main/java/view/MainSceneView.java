@@ -11,8 +11,21 @@ import java.io.IOException;
 public class MainSceneView {
 
     @FXML
-    void initialize() {
+    public void onViewTracksButtonClickMethod() {
+        Parent root = onSomeViewButtonClickMethod("/fxml/TrackScene.fxml");
+        Stage stage = new Stage();
+        stage.setTitle("Tracks table");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 
+    @FXML
+    public void onViewGenresButtonClickMethod() {
+        Parent root = onSomeViewButtonClickMethod("/fxml/GenreScene.fxml");
+        Stage stage = new Stage();
+        stage.setTitle("Genres table");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     private Parent onSomeViewButtonClickMethod(String path) {
@@ -26,21 +39,4 @@ public class MainSceneView {
         return loader.getRoot();
     }
 
-    @FXML
-    public void onViewTracksButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/TrackScene.fxml");
-        Stage stage = new Stage();
-        stage.setTitle("Tracks table");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-    }
-
-    @FXML
-    public void onViewGenresButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/GenreScene.fxml");
-        Stage stage = new Stage();
-        stage.setTitle("Genre table");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-    }
 }

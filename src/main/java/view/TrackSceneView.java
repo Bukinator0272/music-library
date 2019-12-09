@@ -1,28 +1,29 @@
 package view;
 
+import controller.TrackController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.impl.TrackImpl;
 import model.interfaces.Track;
 
 import java.io.IOException;
-import java.util.UUID;
 
 public class TrackSceneView {
+
+    private TrackController controller;
 
     @FXML
     private TableView<Track> tracksTable;
 
     @FXML
-    private TableColumn<Track, UUID> idColumn;
+    private TableColumn<Track, Long> idColumn;
 
     @FXML
     private TableColumn<Track, String> nameColumn;
@@ -36,67 +37,28 @@ public class TrackSceneView {
     @FXML
     private TableColumn<Track, String> genreColumn;
 
+    //need to decide type of duration
     @FXML
-    private TableColumn<Track, ?> durationColumn;
+    private TableColumn<Track, Long> durationColumn;
 
-    private Parent onSomeViewButtonClickMethod(String path) {
+    @FXML
+    private Button editTableButton;
+
+    @FXML
+    private void onEditTableButtonClickMethod() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(path));
+        loader.setLocation(getClass().getResource("/fxml/TrackEnterScene.fxml"));
         try {
             loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return loader.getRoot();
-    }
-
-    @FXML
-    public void onAddTrackButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/EnterScene.fxml");
         Stage stage = new Stage();
-        stage.setTitle("Enter smth");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-    }
-
-    @FXML
-    void onDeleteTrackButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/EnterScene.fxml");
-        Stage stage = new Stage();
-        stage.setTitle("Need to write search from DB");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-    }
-
-    @FXML
-    void onGetTrackButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/EnterScene.fxml");
-        Stage stage = new Stage();
-        stage.setTitle("Need to write search from DB");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-    }
-
-    @FXML
-    void onUpdateTrackButtonClickMethod() {
-        Parent root = onSomeViewButtonClickMethod("/fxml/EnterScene.fxml");
-        Stage stage = new Stage();
-        stage.setTitle("Need to write search from DB");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
-    }
-
-    private ObservableList<Track> initData() {
-        ObservableList<Track> tracks = FXCollections.observableArrayList();
-//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog1", "anime1", "rofl1", "kek1", 5));
-//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog2", "anime2", "rofl2", "kek2", 10));
-//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog3", "anime3", "rofl3", "kek3", 15));
-//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog4", "anime4", "rofl4", "kek4", 20));
-//        tracks.add(new TrackImpl(UUID.randomUUID(), "pog5", "anime5", "rofl5", "kek5", 25));
-        return tracks;
+        stage.setTitle("Track enter");
+        stage.setScene(new Scene(loader.getRoot()));
+        stage.show();
+        Stage currentStage = (Stage) editTableButton.getScene().getWindow();
+        currentStage.close();
     }
 
     @FXML
@@ -108,6 +70,14 @@ public class TrackSceneView {
         genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
         durationColumn.setCellValueFactory(new PropertyValueFactory<>("duration"));
         tracksTable.setItems(initData());
+    }
+
+    private ObservableList<Track> initData() {
+        ObservableList<Track> tracks = FXCollections.observableArrayList();
+//        for (int i = 0; i < controller.getTracksCount(); i++) {
+//            tracks.add(controller.getTracks()[i]);
+//        }
+        return tracks;
     }
 
 }

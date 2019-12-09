@@ -9,9 +9,7 @@
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GenreSceneView">
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
                 <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
-                    <children>
                         <TableView fx:id="genresTable" layoutY="-3.0" prefHeight="261.0" prefWidth="700.0">
                             <columns>
                                 <TableColumn fx:id="idColumn" prefWidth="350.0" text="Id"/>
@@ -21,22 +19,14 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                             </columnResizePolicy>
                         </TableView>
-                        <Button layoutX="14.0" layoutY="276.0" mnemonicParsing="false"
-                                onAction="#onAddGenreButtonClickMethod" text="Add"/>
-                        <Button layoutX="78.0" layoutY="276.0" mnemonicParsing="false"
-                                onAction="#onGetGenreButtonClickMethod" text="Get"/>
-                        <Button layoutX="138.0" layoutY="276.0" mnemonicParsing="false"
-                                onAction="#onUpdateGenreButtonClickMethod" text="Update"/>
-                        <Button layoutX="220.0" layoutY="276.0" mnemonicParsing="false"
-                                onAction="#onDeleteGenreButtonClickMethod" text="Delete"/>
-                    </children>
+                        <Button fx:id="editTableButton" layoutX="14.0" layoutY="276.0" mnemonicParsing="false"
+                                onAction="#onEditTableButtonClickMethod" text="Edit table"/>
                 </AnchorPane>
-                <Label layoutX="243.0" layoutY="7.0" text="Genre table" textFill="WHITE">
+                <Label layoutX="243.0" layoutY="7.0" text="Genres table" textFill="WHITE">
                     <font>
                         <Font size="45.0"/>
                     </font>
                 </Label>
-            </children>
         </AnchorPane>
     </center>
 </BorderPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TrackEnterSceneView">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+                        <Button fx:id="addTrackButton" layoutX="20.0" layoutY="245.0" mnemonicParsing="false"
+                                onAction="#onAddTrackButtonClickMethod" text="Add"/>
+                        <Button fx:id="updateTrackButton" layoutX="200.0" layoutY="125.0" mnemonicParsing="false"
+                                onAction="#onUpdateTrackButtonClickMethod" text="Update"/>
+                        <Button fx:id="deleteTrackButton" layoutX="300.0" layoutY="125.0" mnemonicParsing="false"
+                                onAction="#onDeleteTrackButtonClickMethod" text="Delete"/>
+                        <TextField fx:id="nameTextField" layoutX="20.0" layoutY="45.0" promptText="Name"/>
+                        <TextField fx:id="searchValueTextField" layoutX="200.0" layoutY="45.0"
+                                   promptText="Search value"/>
+                        <TextField fx:id="authorTextField" layoutX="20.0" layoutY="85.0" promptText="Author"/>
+                        <TextField fx:id="albumTextField" layoutX="20.0" layoutY="125.0" promptText="Album"/>
+                        <TextField fx:id="genreTextField" layoutX="20.0" layoutY="165.0" promptText="Genre"/>
+                        <TextField fx:id="durationTextField" layoutX="20.0" layoutY="205.0" promptText="Duration"/>
+                        <TextField fx:id="newValueTextField" layoutX="200.0" layoutY="85.0" promptText="New value"/>
+                        <RadioButton fx:id="namePropertyToggleButton" layoutX="420.0" layoutY="80.0"
+                                     mnemonicParsing="false" text="Name">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="objectPropertyToggleButtons"/>
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="authorPropertyToggleButton" layoutX="420.0" layoutY="100.0"
+                                     mnemonicParsing="false" text="Author" toggleGroup="$objectPropertyToggleButtons"/>
+                        <Text layoutX="420.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="Choose update field:"/>
+                        <RadioButton fx:id="albumPropertyToggleButton" layoutX="420.0" layoutY="120.0"
+                                     mnemonicParsing="false" text="Album" toggleGroup="$objectPropertyToggleButtons"/>
+                        <RadioButton fx:id="genrePropertyToggleButton" layoutX="420.0" layoutY="140.0"
+                                     mnemonicParsing="false" text="Genre" toggleGroup="$objectPropertyToggleButtons"/>
+                        <RadioButton fx:id="durationPropertyToggleButton" layoutX="420.0" layoutY="160.0"
+                                     mnemonicParsing="false" text="Duration"
+                                     toggleGroup="$objectPropertyToggleButtons"/>
+                </AnchorPane>
+                <Label layoutX="243.0" layoutY="14.0" text="Enter track" textFill="WHITE">
+                    <font>
+                        <Font size="45.0"/>
+                    </font>
+                </Label>
+        </AnchorPane>
+    </center>
+</BorderPane>

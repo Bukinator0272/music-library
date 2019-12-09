@@ -28,6 +28,11 @@ public class DataHolder {
         return null;
     }
 
+    public List<Genre> getGenres() throws SQLException {
+        GenreDAO genreDAO = new GenreDAO(db.getConnection());
+        return genreDAO.getAll();
+    }
+
     public void addGenre(String name) throws SQLException {
         Genre genre = new GenreImpl(name);
         genres.add(genre);
@@ -37,7 +42,7 @@ public class DataHolder {
 
     public void removeGenre(String name) throws SQLException {
         Genre genre = getGenreByName(name);
-        if (genre!=null){
+        if (genre != null) {
             genres.remove(genre);
             GenreDAO genreDAO = new GenreDAO(db.getConnection());
             genreDAO.delete(genre.getId());
@@ -45,16 +50,16 @@ public class DataHolder {
     }
 
     public void updateGenre(String name, String newName) throws SQLException {
-        if (name != null && newName!=null){
+        if (name != null && newName != null) {
             Genre genre = getGenreByName(name);
-            if (genre!=null){
+            if (genre != null) {
                 genre.setName(newName);
                 GenreDAO genreDAO = new GenreDAO(db.getConnection());
                 genreDAO.update(genre);
             }
         }
     }
-    
+
     public void addTrack(String name, String author, String album, String genre, int duration) {
         Track track = new TrackImpl(name, author, album, getGenreByName(genre), duration);
         tracks.add(track);
