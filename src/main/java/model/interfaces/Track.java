@@ -17,9 +17,9 @@ public interface Track {
 
     void setAlbum(String album);
 
-    int getDuration();
+    Integer getDuration();
 
-    void setDuration(int duration);
+    void setDuration(Integer duration);
 
     Genre getGenre();
 

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class MainSceneView {
         Stage stage = new Stage();
         stage.setTitle("Tracks table");
         stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
 
@@ -25,6 +27,7 @@ public class MainSceneView {
         Stage stage = new Stage();
         stage.setTitle("Genres table");
         stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
     }
 
@@ -38,5 +41,4 @@ public class MainSceneView {
         }
         return loader.getRoot();
     }
-
 }

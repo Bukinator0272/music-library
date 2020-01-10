@@ -34,4 +34,9 @@ public class GenreImpl implements Genre {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

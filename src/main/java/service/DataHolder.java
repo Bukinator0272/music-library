@@ -2,6 +2,7 @@ package service;
 
 import model.dbservice.connection.DataBaseService;
 import model.dbservice.dao.GenreDAO;
+import model.dbservice.dao.TrackDAO;
 import model.impl.GenreImpl;
 import model.impl.TrackImpl;
 import model.interfaces.Genre;
@@ -33,11 +34,21 @@ public class DataHolder {
         return genreDAO.getAll();
     }
 
-    public void addGenre(String name) throws SQLException {
+    public void saveGenre(String name) throws SQLException {
         Genre genre = new GenreImpl(name);
         genres.add(genre);
         GenreDAO genreDAO = new GenreDAO(db.getConnection());
-        genreDAO.insert(genre);
+        genreDAO.save(genre);
+    }
+
+    public void saveGenre(Genre genre) throws SQLException {
+        GenreDAO genreDAO = new GenreDAO(db.getConnection());
+        genreDAO.save(genre);
+    }
+
+    public void saveTrack(Track track) throws SQLException {
+        TrackDAO trackDAO = new TrackDAO(db.getConnection());
+        trackDAO.save(track);
     }
 
     public void removeGenre(String name) throws SQLException {
@@ -46,6 +57,24 @@ public class DataHolder {
             genres.remove(genre);
             GenreDAO genreDAO = new GenreDAO(db.getConnection());
             genreDAO.delete(genre.getId());
+        }
+    }
+
+
+    public void removeGenre(Genre genre) throws SQLException {
+        if (genre != null) {
+            //genres.remove(genre);
+            GenreDAO genreDAO = new GenreDAO(db.getConnection());
+            genreDAO.delete(genre);
+        }
+    }
+
+
+    public void removeTrack(Track track) throws SQLException {
+        if (track != null) {
+            //genres.remove(genre);
+            TrackDAO trackDAO = new TrackDAO(db.getConnection());
+            trackDAO.delete(track);
         }
     }
 
@@ -67,11 +96,10 @@ public class DataHolder {
 //        genreDAO.add(track);
     }
 
-    public int getTracksCount() {
-        return tracks.size();
+    public List<Track> getTracks() throws SQLException {
+        TrackDAO trackDAO = new TrackDAO(db.getConnection());
+        return trackDAO.getAll();
     }
 
-    public int getGenresCount() {
-        return genres.size();
-    }
+
 }

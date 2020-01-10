@@ -10,12 +10,16 @@ public class GenreController {
 
     private DataHolder dataHolder;
 
-    public void addGenre(String name) throws SQLException {
-        dataHolder.addGenre(name);
+    public GenreController() {
+        this.dataHolder = SharedController.getInstance().getDataHolder();
     }
 
-    public int getGenresCount() {
-        return dataHolder.getGenresCount();
+    public void saveGenre(String name) throws SQLException {
+        dataHolder.saveGenre(name);
+    }
+
+    public void saveGenre(Genre genre) throws SQLException {
+        dataHolder.saveGenre(genre);
     }
 
     public List<Genre> getGenres() throws SQLException {
@@ -26,7 +30,7 @@ public class GenreController {
         dataHolder.removeGenre(name);
     }
 
-    public void updateGenre(String name, String newName) throws SQLException {
-        dataHolder.updateGenre(name, newName);
+    public void deleteGenre(Genre genre) throws SQLException {
+        dataHolder.removeGenre(genre);
     }
 }

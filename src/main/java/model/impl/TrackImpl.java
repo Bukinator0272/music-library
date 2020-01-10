@@ -10,7 +10,7 @@ public class TrackImpl implements Track {
     private String author;
     private String album;
     private Genre genre;
-    private int duration;
+    private Integer duration;
 
     public TrackImpl(Long id, String name, String author, String album, Genre genre, int duration) {
         this.id = id;
@@ -79,12 +79,12 @@ public class TrackImpl implements Track {
     }
 
     @Override
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
     @Override
-    public void setDuration(int duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 }

@@ -66,13 +66,13 @@ public class TrackEnterSceneView {
 
     @FXML
     void onAddTrackButtonClickMethod() {
-          controller.addTrack(
-                  nameTextField.getText(),
-                  authorTextField.getText(),
-                  albumTextField.getText(),
-                  genreTextField.getText(),
-                  Integer.parseInt(durationTextField.getText())
-           );
+        controller.addTrack(
+                nameTextField.getText(),
+                authorTextField.getText(),
+                albumTextField.getText(),
+                genreTextField.getText(),
+                Integer.parseInt(durationTextField.getText())
+        );
         Stage currentStage = (Stage) addTrackButton.getScene().getWindow();
         currentStage.close();
         openTrackTableScene();

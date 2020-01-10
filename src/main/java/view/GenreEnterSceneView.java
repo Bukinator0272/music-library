@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class GenreEnterSceneView {
 
-    private GenreController controller;
+    private GenreController controller = new GenreController();
 
     @FXML
     private TextField nameTextField;
@@ -35,7 +35,7 @@ public class GenreEnterSceneView {
 
     @FXML
     private void onAddGenreButtonClickMethod() throws SQLException {
-        controller.addGenre(nameTextField.getText());
+        controller.saveGenre(nameTextField.getText());
         Stage currentStage = (Stage) addGenreButton.getScene().getWindow();
         currentStage.close();
         openGenreTableScene();
@@ -51,7 +51,6 @@ public class GenreEnterSceneView {
 
     @FXML
     private void onUpdateGenreButtonClickMethod() throws SQLException {
-        controller.updateGenre(searchTextField.getText(), newNameTextField.getText());
         Stage currentStage = (Stage) updateGenreButton.getScene().getWindow();
         currentStage.close();
         openGenreTableScene();
